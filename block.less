@@ -1,0 +1,57 @@
+//
+// Component: Block
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@block-default-background:                      @global-background;
+@block-padding-vertical:                        @global-spacing-vertical;
+@block-padding-vertical-large:                  @global-spacing-vertical-large;
+
+// Component
+// ========================================================================
+
+.hook-block() {
+	//--------- Layout -----------
+	&-header{
+		height: 130px;
+		padding-top: 10px !important;
+	}
+	&-footer{
+		min-height: 48px;
+		margin-top: -48px/2 - @block-padding-vertical-large;
+	}
+	&-nav{
+		height: 40px;
+		padding: 0 !important;
+	}
+
+	//--------- Typo -----------
+
+	//--------- Style -----------
+	&-header,
+	&-footer{
+		background-color: @global-darkblue; 
+	}
+}
+
+
+// Color modifier
+// ========================================================================
+
+.hook-block-default() {}
+
+.hook-block-muted() {}
+
+.hook-block-secondary() {}
+
+.hook-block-primary() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-block-misc() {}
