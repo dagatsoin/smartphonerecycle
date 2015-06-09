@@ -218,6 +218,9 @@ button[type=submit]:after {
 		margin-left: auto;
 		margin-right: auto;
 	}
+	& input.submit{
+		margin-top: 10px;
+	}
 }
 
 .added_to_cart.widget>form>ul>li:first-child,
@@ -360,13 +363,23 @@ ul.proposal>li {
 
 ul.proposal {
 	@media(max-width:@breakpoint-small-max){
-		max-height: 350px;
+		height: 200px;
 		overflow-y: scroll;
 	}
+	height: auto;
 }
+
 
 ul.proposal span {
 	vertical-align: baseline;
+}
+
+.added_to_cart {
+	p.added,
+	p.value{
+		margin-top:10px;
+		margin-bottom: 10px;
+	}
 }
 
 ul.proposal .up {
@@ -423,6 +436,7 @@ ul.proposal label.submit {
 	margin-top: 4px;
 	width: 80%;
 }
+
 
 /* ARTICLE PAGE -------------------------------------------------------------------------------- */
 
@@ -516,27 +530,28 @@ ul.proposal label.submit {
 
 /* BOTTOM PANE --------------------------------------------------------------------------------- */
 
-.bottom.pane {
+.footer.widget {
 	clear: both;
 	height: 48px;
 }
 
-.bottom.pane>ul {
+.footer.widget ul {
 	display: block;
 	padding: 5px;
+ 	margin-top: -24px;
 }
 
-.bottom.pane>ul>li {
+.footer.widget ul>li {
 	display: inline;
 	margin: 0;
 	padding: 5px 0;
 }
 
-.bottom.pane>ul>li:not(:first-child):before {
+.footer.widget ul>li:not(:first-child):before {
 	padding-right: 5px;
 }
 
-.bottom.pane>ul>li:nth-child(7) {
+.footer.widget ul>li:nth-child(7) {
 	clear: left;
 }
 
@@ -617,16 +632,17 @@ ol.steps {
 }
 
 ol.steps>li {
-	display: inline-block;
-	margin: 10px 0 5px;
-	padding: 0;
-	width: 33%;
+	@media(min-width:@breakpoint-medium){
+		display: inline-block;
+		margin: 10px 0 5px;
+		padding: 0;
+		width: 33%;
+	}
 }
 
 .cart.overview.page>h2 {
 	border-width: 1px;
 	border-bottom: none;
-	margin: 0 20px;
 }
 
 .cart.page .cart, .order.page .cart {
@@ -725,10 +741,6 @@ li.remove>a {
 	width: 16px;
 }
 
-.cart.page>.right,
-.order.page>.right {
-	margin: 0 20px;
-}
 
 .cart.page>.right .links,
 .order.page>.right .links {
@@ -772,9 +784,12 @@ li.remove>a {
 }
 
 .cart.page .links ul, .cart.page .links li {
-	display: block;	
 	margin: 0;
 	padding: 0;
+	display: inline-block;	
+	@media (min-width:@breakpoint-medium){
+		display: block;	
+	}
 }
 
 .cart.page a.submit {
@@ -1671,8 +1686,6 @@ div.items li span {
 /* OFFERS WIDGET ------------------------------------------------------------------------------- */
 
 .offers.widget {
-	//height: 536px;
-	height: 266px;
 	@media(min-width:@breakpoint-small){
 		height: 266px;
 	}
@@ -1683,16 +1696,19 @@ div.items li span {
 }
 
 .offers.widget .next {
-	right: -7px;
+	right: -5px;
 }
 
 
 /* QUESTION WIDGET ----------------------------------------------------------------------------- */
 
 .question.widget {
-	display: inline-block;
-	height: 265px;
-
+	margin-top: 15px;
+	height: 137px;
+	@media(min-width:@breakpoint-medium){
+		margin-top: 0;
+		height: 265px;
+	}
 }
 
 /* SALES PAGE ---------------------------------------------------------------------------------- */
@@ -1773,14 +1789,16 @@ div.items li span {
 /* SHIPPING PAGE ------------------------------------------------------------------------------- */
 
 .shipping.page {
-	padding: 14px;
-	position: relative;
-	
+	ul.proposal{
+		height: 1050px;
+		overflow-y: auto;
+		
+		@media(min-width:@breakpoint-medium){
+			height: 370px;
+		}
+	}
 }
 
-.shipping.page ul.proposal {
-	width: 860px;
-}
 
 .shipping.page ul.proposal>li>ul {
 	padding-left: 0;
@@ -1796,20 +1814,17 @@ div.items li span {
 	display: none;
 	margin: 0;
 	padding: 0 0 1em;
-	width: 750px;
 }
 
 .shipping.page fieldset>legend {
 	border-width: 1px;
 	display: inline-block;
 	margin: -1px;
-	width: 750px;
 }
 
 .shipping.page fieldset>div {
 	display: inline-block;
 	vertical-align: top;
-	width: 375px;
 }
 
 .shipping.page fieldset>div input {
@@ -2123,17 +2138,21 @@ ul.proposal .insurance .two>ul>li {
 	text-align: left;
 }
 
-ul.proposal .insurance>ul {
+ul.proposal .insurance ul {
 	font-size: 14px;
 	text-transform: uppercase;
 }
 
-ul.proposal .insurance>.plus {
+ul.proposal .insurance .plus {
+	height: 35px;
 	font-size: 18px;
 }
 
 ul.proposal .insurance .drawback p {
-	font-size: 14px;
+	font-size: 14px;	
+	@media(min-width:@breakpoint-medium){
+		font-size: 13px;	
+	}
 	text-transform: uppercase;
 }
 
@@ -2199,19 +2218,19 @@ ul.proposal label.submit {
 
 /* BOTTOM PANE --------------------------------------------------------------------------------- */
 
-.bottom.pane {
+.footer.widget {
 	text-align: center;
 }
 
-.bottom.pane>ul>li:not(:first-child):before {
+.footer.widget ul>li:not(:first-child):before {
 	font-weight: bold;
 }
 
-.bottom.pane>ul>li:nth-child(7):before {
+.footer.widget ul>li:nth-child(7):before {
 	white-space: pre;
 }
 
-.bottom.pane a {
+.footer.widget a {
 	font-weight: bold;
 }
 
@@ -3292,30 +3311,27 @@ ul.proposal label.submit {
 
 /* BOTTOM PANE --------------------------------------------------------------------------------- */
 
-.bottom.pane {
-	background: #00527a;
-}
 
-.bottom.pane>ul {
+.footer.widget ul {
 	background: #5ec5ed;
 	list-style: none;
 }
 
-.bottom.pane>ul>li:not(:first-child):before {
+.footer.widget ul>li:not(:first-child):before {
 	content: ' | ';
 	color: white;
 }
 
-.bottom.pane>ul>li:nth-child(7):before {
+.footer.widget ul>li:nth-child(7):before {
 	content: '\A';
 }
 
-.bottom.pane a {
+.footer.widget a {
 	color: white;
 	text-decoration: none;
 }
 
-.bottom.pane a:hover {
+.footer.widget a:hover {
 	text-decoration: underline;
 }
 
@@ -3356,18 +3372,6 @@ ul.proposal label.submit {
 }
 
 /* CART OVERVIEW PAGE -------------------------------------------------------------------------- */
-
-ol.steps>li:first-child:before {
-	content: '1. ';
-}
-
-ol.steps>li:nth-child(2):before {
-	content: '2. ';
-}
-
-ol.steps>li:nth-child(3):before {
-	content: '3. ';
-}
 
 .cart.page {
 	background: #ececea linear-gradient(#ccdce4, #ffffff);
@@ -3557,6 +3561,9 @@ li.remove>a {
 
 .contact.page .background {
 	background: url('../images/operatrice14.png') right 40px center no-repeat;
+	@media(min-width:@breakpoint-medium){
+		background: url('../images/operatrice14.png') right 40px center no-repeat;
+	}
 }
 
 .contact.page:not(.cart) ul {
@@ -4116,7 +4123,10 @@ div.items ul {
 /* QUESTION WIDGET ----------------------------------------------------------------------------- */
 
 .question.widget {
-	background: white url('../images/operatrice.png') center no-repeat;
+	background: white url('../images/operatrice-small.png') center no-repeat;
+	@media(min-width:@breakpoint-medium){
+		background: white url('../images/operatrice.png') center no-repeat;
+	}
 	box-shadow: 0 1px 5px rgba(100, 101, 103, .75);
 }
 

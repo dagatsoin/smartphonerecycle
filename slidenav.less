@@ -62,7 +62,10 @@
 
 .uk-slidenav {
     /* 1 */
-    display: inline-block;
+    display: none;
+    @media(min-width:@breakpoint-medium){
+        display: inline-block;
+    }
     /* 2 */
     -moz-box-sizing: border-box;
     box-sizing: border-box;
