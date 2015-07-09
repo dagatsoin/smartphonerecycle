@@ -253,17 +253,24 @@ button[type=submit]:after {
 	& input.submit{
 		margin-top: 10px;
 	}
+	@media(min-width:@breakpoint-large){
+		max-width: 870px;
+	}
+	.uk-overflow-container{
+		height: 100%;
+	}
 }
 
-.added_to_cart.widget>form>ul>li:first-child,
-ul.proposal>li:first-child {
+.added_to_cart.widget form>ul>li:first-child,
+.proposal .uk-panel:first-child,
+.proposal>li:first-child {
 	border-width: 0;
 	@media(min-width:@breakpoint-medium){
 		border-width: 0 1px 0 0;
 	}
 }
 
-.added_to_cart.widget>form>ul>li>a {
+.added_to_cart.widget form>ul>li>a {
 	bottom: 0;
 	left: 24px;
 	position: absolute;
@@ -307,7 +314,7 @@ ul.proposal>li:first-child {
 .item.recycle.page .added_to_cart.widget {
 	font-family: "Open Sans", sans-serif;
 	width: 729px;
-	height: 580px;
+	height: 610px;
 }
 
 .item.recycle.page .added_to_cart.widget .close {
@@ -327,7 +334,7 @@ ul.proposal>li:first-child {
 .item.recycle.page .added_to_cart.widget form div.uk-hidden-small ul {
 	background-size: 59% 100%;
 	height: 311px;
-	margin-left: 0; //prevent uk-grid offset
+	margin: 0 10px; //prevent uk-grid offset
 }
 
 .item.recycle.page .added_to_cart.widget a.submit {
@@ -381,7 +388,7 @@ ul.proposal>li:first-child {
 }
 /* ADDED TO CART WIDGET (SALE SPECIFIC) -------------------------------------------------------- */
 
-ul.proposal>li {
+.proposal>li {
 	@media(min-width:@breakpoint-medium){
 		height:auto;
 	}
@@ -391,8 +398,7 @@ ul.proposal>li {
 	left: 49px;
 }
 
-ul.proposal {
-	height: 200px;
+.proposal {
 	overflow-y: scroll;
 	@media(min-width:@breakpoint-medium){
 		height: auto;
@@ -405,7 +411,7 @@ ul.proposal {
 	}
 }
 
-ul.proposal .extension{
+.proposal .extension{
 	padding-right:@global-spacing-horizontal-small;
 	&>ul {
 		height: 50px;
@@ -413,7 +419,7 @@ ul.proposal .extension{
 	}
 }
 
-ul.proposal span {
+.proposal span {
 	vertical-align: baseline;
 }
 
@@ -424,23 +430,22 @@ ul.proposal span {
 	}
 }
 
-ul.proposal .up {
+.proposal .up {
 	vertical-align: top;
 }
 
-ul.proposal .one {
+.proposal .one {
 	margin-bottom: 0.5em;
 	@media(min-width:@breakpoint-medium){
 		margin-bottom: 1em;
 	}
-	
 }
 
-ul.proposal .extension .three {
+.proposal .extension .three {
 	margin: 1.7em 0;
 }
 
-ul.proposal .extension .drawback {
+.proposal .extension .drawback {
 	height: 50px;
 	display: inline-block;
 	margin-bottom: 13px;
@@ -448,11 +453,11 @@ ul.proposal .extension .drawback {
 	width: 80%;
 }
 
-ul.proposal .insurance .two {
+.proposal .insurance .two {
 	padding-left: 2em;
 }
 
-ul.proposal .insurance .two>ul {
+.proposal .insurance .two>ul {
 	margin-top:0.5em;
 	margin-bottom:0.5em;
 	@media(min-width:@breakpoint-medium){
@@ -460,11 +465,11 @@ ul.proposal .insurance .two>ul {
 	}
 }
 
-ul.proposal .insurance .two>img {
+.proposal .insurance .two>img {
 	float: right;
 }
 
-ul.proposal .insurance .drawback {
+.proposal .insurance .drawback {
 	@media(max-width:@breakpoint-small-max){
 		margin:0 auto;
 	}
@@ -477,7 +482,7 @@ ul.proposal .insurance .drawback {
 
 }
 
-ul.proposal .insurance .plus {
+.proposal .insurance .plus {
 	display: inline-block;
 	vertical-align: top;
 	width: 10%;
@@ -489,7 +494,7 @@ ul.proposal .insurance .plus {
 }
 
 
-ul.proposal label.submit {
+.proposal label.submit {
 	margin-top: 4px;
 	width: 80%;
 }
@@ -1812,10 +1817,6 @@ div.items li span {
 		li a{
 			display: block;
 		}
-		img{
- 			max-width:none;
- 			width: 100%;
- 		}
  	}
 }
 
@@ -1910,13 +1911,16 @@ div.items li span {
 	.uk-slidenav-position.offers.widget{
 		padding-top:@global-spacing;
 	}
-	ul.proposal{
-		height: 1050px;
+	.proposal{
 		overflow-y: auto;
 		
 		@media(min-width:@breakpoint-medium){
 			height: auto;
 		}
+	}
+
+	.uk-hidden-small .extension .one{
+		margin-bottom: 43px;
 	}
 }
 
@@ -2226,46 +2230,50 @@ button[type=submit]
 }
 /* ADDED TO CART WIDGET (SALE SPECIFIC) -------------------------------------------------------- */
 
-ul.proposal {
+ul.proposal{
+	margin-left: 0;
+}
+
+.proposal {
 	font-weight: bold;
 }
 
-ul.proposal>li>ul {
+.proposal>li>ul {
 	text-align: center;
 }
 
-ul.proposal ul,
-ul.proposal .drawback li {
+.proposal ul,
+.proposal .drawback li {
 	font-size: 16px;
 }
 
 
-ul.proposal>li {
+.proposal>li {
 	text-align: center;
 }
 
-ul.proposal .up {
+.proposal .up {
 	font-size: 60%;
 }
 
-ul.proposal strong {
+.proposal strong {
 	text-transform: uppercase;
 }
 
-ul.proposal .one {
+.proposal .one {
 	font-size: 16px;
 	@media(min-width:@breakpoint-medium){
 		font-size: 18px;
 	}
 }
 
-ul.proposal .two {
+.proposal .two {
 	@media(min-width:@breakpoint-medium){
 		font-size: 14px;
 	}
 }
 
-ul.proposal .three {
+.proposal .three {
 	
 	@media(min-width:@breakpoint-medium){
 		font-size: 16px;
@@ -2273,19 +2281,19 @@ ul.proposal .three {
 	}
 }
 
-ul.proposal .extension .drawback {
+.proposal .extension .drawback {
 	text-transform: uppercase;
 }
 
-ul.proposal .insurance .two {
+.proposal .insurance .two {
 	text-align: left;
 }
 
-ul.proposal .insurance .two>ul>li {
+.proposal .insurance .two>ul>li {
 	text-align: left;
 }
 
-ul.proposal .insurance ul {
+.proposal .insurance ul {
 	font-size: 12px;
 	@media(min-width:@breakpoint-medium){
 		font-size: 14px;
@@ -2293,11 +2301,11 @@ ul.proposal .insurance ul {
 	}
 }
 
-ul.proposal .insurance .plus {
+.proposal .insurance .plus {
 	font-size: 18px;
 }
 
-ul.proposal .insurance .drawback p {
+.proposal .insurance .drawback p {
 	font-size: 14px;	
 	line-height: 18px;
 	text-transform: uppercase;
@@ -2306,7 +2314,7 @@ ul.proposal .insurance .drawback p {
 	}
 }
 
-ul.proposal label.submit {
+.proposal label.submit {
 	font-size: 11px;
 	text-shadow: none;
 	text-transform: uppercase;
@@ -3244,22 +3252,24 @@ button[type=submit]:after {
 	color: #fca103;
 }
 
-.added_to_cart.widget>form>ul,
-ul.proposal {
-	background: #ececea linear-gradient(rgba(0, 82, 122, .2), rgba(236, 237, 237, .2));
-	background: -ms-linear-gradient(rgba(0, 82, 122, .2), rgba(236, 237, 237, .2));
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(4, 4, 4, .1);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececea',endColorstr='#ffffff',GradientType=0);
+.added_to_cart.widget form ul.proposal {
+	@media(min-width:@breakpoint-medium){
+		background: #ececea linear-gradient(rgba(0, 82, 122, .2), rgba(236, 237, 237, .2));
+		background: -ms-linear-gradient(rgba(0, 82, 122, .2), rgba(236, 237, 237, .2));
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(4, 4, 4, .1);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececea',endColorstr='#ffffff',GradientType=0);
+	}
 }
 
-.added_to_cart.widget ul.proposals li{
+.added_to_cart.widget .proposals li{
 	background: #ececea linear-gradient(#d7e4ea, #fbfbfb);
 	background: -ms-linear-gradient(#d7e4ea, #fbfbfb);
 }
 
-.added_to_cart.widget>form>ul>li:first-child,
-ul.proposal>li:first-child {
+.added_to_cart.widget form>ul>li:first-child,
+.proposal>li:first-child,
+.proposal .uk-panel:first-child {
 	border-style: solid;
 	border-color: #005179;
 }
@@ -3340,51 +3350,51 @@ ul.proposal>li:first-child {
 }
 /* ADDED TO CART WIDGET (SALE SPECIFIC) -------------------------------------------------------- */
 
-ul.proposal .one {
+.proposal .one {
 	color: #fca103;
 }
 
-ul.proposal .two {
+.proposal .two {
 	color: #00527a;
 }
 
-ul.proposal .three {
+.proposal .three {
 	color: #fca103;
 }
 
-ul.proposal .extension .drawback {
+.proposal .extension .drawback {
 	background: #fca103;
 	color: #ffefff;
 	list-style: none;	
 }
 
-ul.proposal .extension .drawback>li:last-child {
+.proposal .extension .drawback>li:last-child {
 	color: #00527a;
 }
 
-ul.proposal .insurance .two>ul>li {
+.proposal .insurance .two>ul>li {
 	list-style: disc;
 }
 
-ul.proposal .insurance .white {
+.proposal .insurance .white {
 	background: #fca103;
 	color: #ffefff;
 }
 
-ul.proposal .insurance .drawback {
+.proposal .insurance .drawback {
 	background: #fca103;
 	color: #00527a;
 }
 
-ul.proposal .no.price {
+.proposal .no.price {
 	text-decoration: line-through;
 }
 
-ul.proposal>li>ul>li:last-child {
+.proposal>li>ul>li:last-child {
 	color: #00527a;
 }
 
-ul.proposal label.submit {
+.proposal label.submit {
 	text-shadow: none;
 }
 
