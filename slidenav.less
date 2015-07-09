@@ -62,10 +62,7 @@
 
 .uk-slidenav {
     /* 1 */
-    display: none;
-    @media(min-width:@breakpoint-medium){
-        display: inline-block;
-    }
+    display: inline-block;
     /* 2 */
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -138,6 +135,10 @@
     top: 50%;
     z-index: 1;
     margin-top: -(@slidenav-height / 2);
+}
+
+.added_to_cart .uk-slidenav-position .uk-slidenav{
+    top:66px;
 }
 
 .uk-slidenav-position:hover .uk-slidenav { display: block; }

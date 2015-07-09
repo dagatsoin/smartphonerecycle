@@ -29,6 +29,7 @@
 @global-color:                                  #444;
 @global-muted-color:                            #999;
 @global-text-shadow:                            #fff;
+@global-heading-color: 							#005179;
 
 @global-link-color:                             #07D;
 @global-link-hover-color:                       #059;
@@ -77,17 +78,17 @@
 // Spacings
 //
 
-@global-spacing:                           		25px;
-@global-spacing-large:                     		35px;
+@global-spacing:                           		20px;
+@global-spacing-large:                     		40px;
 
-@global-spacing-horizontal:                		25px;
-@global-spacing-vertical:                       25px;
+@global-spacing-horizontal:                		@global-spacing;
+@global-spacing-vertical:                       @global-spacing;
 
-@global-spacing-horizontal-large:               35px;
-@global-spacing-vertical-large:                 35px;
+@global-spacing-horizontal-large:               @global-spacing-large;
+@global-spacing-vertical-large:                 @global-spacing-large;
 
-@global-spacing-horizontal-small:               10px;
-@global-spacing-vertical-small:                 10px;
+@global-spacing-horizontal-small:               @global-spacing/2;
+@global-spacing-vertical-small:                 @global-spacing/2;
 
 @global-margin:                                 @global-spacing;
 @global-margin-large:                           @global-spacing-large;

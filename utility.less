@@ -16,6 +16,8 @@
 @utility-align-vertical:                        @global-margin;
 
 @utility-margin:                                @global-margin;
+@utility-margin-small:                          @global-margin/2;
+@utility-margin-large:                          @global-margin-large;
 
 @utility-heading-large-small-font-size:         round((@global-font-size * 2.6)); // 36px / 42px
 @utility-heading-large-small-line-height:       round((@utility-heading-large-small-font-size * 1.154)); // 42px / 48px
@@ -51,6 +53,48 @@
 	@media(min-width:@breakpoint-large) {
 		.uk-block-header .uk-container{
 			padding: 0 @global-spacing-horizontal*2; 
+		}
+	}
+
+	.uk-margin-top-large-negative{
+		@media(min-width:@breakpoint-medium){
+			// Re up the main content to compensate the marghin when there is no module
+			margin-top: -@global-spacing;
+		}
+	}
+
+	.uk-margin{
+		&-width-small{
+			@media(max-width:@breakpoint-small-max){
+				&-margin{
+					&-top{
+						margin-top:@global-margin;
+						
+					}
+				}
+				&-no-margin{
+					&-top{
+						margin-top:0 !important;	
+					}
+				}
+			}
+		}
+		&-width-large{
+			@media(min-width:@breakpoint-large){
+				&-margin{
+					&-top{
+						margin-top:@global-margin;
+					}
+				}
+				&-no-margin{
+					&-top{
+						margin-top:0 !important;	
+					}
+					&-bottom{
+						margin-bottom:0 !important;	
+					}
+				}
+			}				
 		}
 	}
 }

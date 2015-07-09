@@ -27,7 +27,19 @@
 // Sub-object `uk-article-title`
 // ========================================================================
 
-.hook-article-title() {}
+.hook-article-title() {
+	margin: 10px -@global-spacing-horizontal-small 1em;
+	@media(min-width:@breakpoint-medium){
+		margin: 10px -@global-margin 1em;
+	}
+	padding: 5px 10px;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;	
+	background: #005179;
+	color: #fffefe;
+	line-height: 1.5;
+}
 
 
 // Sub-object `uk-article-meta`
